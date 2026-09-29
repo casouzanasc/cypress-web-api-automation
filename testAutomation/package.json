@@ -8,9 +8,10 @@
     "open:e2e:local": "npx cypress open --config-file cypress_dev.config.js",
     "run:e2e:local": "npx cypress run --config-file cypress_dev.config.js",
     "run:api:local": "npx cypress run --config-file cypress_dev.config.js --spec cypress/e2e/api/api.cy.js",
-    "run:e2e:prod": "npx cypress run --config-file cypress_prod.config.js"
+    "run:e2e:prod": "npx cypress run --config-file cypress_prod.config.js",
+    "run:sauce:login": "npx cypress run --config-file cypress_dev.config.js --spec cypress/e2e/pages/login/sauceLogin.cy.js"
   },
-  "author": "Camila Nascimento",
+  "author": "Camila Souza Nascimento",
   "license": "ISC",
   "devDependencies": {
     "@faker-js/faker": "^8.0.2",

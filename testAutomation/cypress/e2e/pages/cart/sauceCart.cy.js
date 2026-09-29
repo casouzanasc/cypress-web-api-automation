@@ -1,0 +1,20 @@
+import * as saucePage from '../login/saucePage';
+import * as sauceHomePage from '../home/sauceHomePage';
+import * as sauceCartPage from './sauceCartPage';
+
+describe('Carrinho SauceDemo', () => {
+
+  beforeEach(() => {
+    saucePage.visit();
+    saucePage.login('standard_user', 'secret_sauce');
+    saucePage.assertInventoryPage();
+  });
+
+  it('Deve adicionar um produto ao carrinho', () => {
+    sauceHomePage.addFirstProduct();
+    sauceHomePage.goToCart();
+
+    sauceCartPage.assertProductAdded();
+  });
+
+});
