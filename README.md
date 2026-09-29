@@ -10,6 +10,8 @@
 
 Projeto desenvolvido por **Camila Souza Nascimento** durante os estudos de Automação de Testes com Cypress, com foco na aplicação prática de testes automatizados Web e API e na construção de um portfólio técnico de Quality Assurance.
 
+Repositório: https://github.com/casouzanasc/cypress-web-api-automation
+
 ## 🎯 Objetivo
 
 Este projeto tem como objetivo praticar e demonstrar conceitos de automação de testes utilizando Cypress, incluindo:
@@ -40,7 +42,7 @@ Este projeto tem como objetivo praticar e demonstrar conceitos de automação de
 ## 📁 Estrutura do projeto
 
 ```text
-automacao_cy/
+cypress-web-api-automation/
 ├── backend/
 │   ├── config/
 │   ├── controllers/
@@ -128,6 +130,8 @@ Para executar o projeto localmente:
 Clone o repositório e instale as dependências na raiz:
 
 ```bash
+git clone https://github.com/casouzanasc/cypress-web-api-automation.git
+cd cypress-web-api-automation
 npm install
 ```
 

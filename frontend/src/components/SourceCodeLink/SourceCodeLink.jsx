@@ -6,7 +6,7 @@ function SourceCodeLink({ left, right }) {
       <li className="nav-item">
         <a
           className="nav-link"
-          href="https://github.com/casouzanasc/automacao_cy"
+          href="https://github.com/casouzanasc/cypress-web-api-automation"
         >
           <i className="ion-social-github"></i> Source code
         </a>

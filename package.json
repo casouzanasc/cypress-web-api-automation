@@ -1,11 +1,11 @@
 {
-  "name": "automacao_cy",
+  "name": "cypress-web-api-automation",
   "version": "1.0.0",
   "description": "Projeto de automação com Cypress, backend em Node.js e frontend em React/Vite.",
-  "homepage": "https://github.com/casouzanasc/automacao_cy",
+  "homepage": "https://github.com/casouzanasc/cypress-web-api-automation",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/casouzanasc/automacao_cy.git"
+    "url": "git+https://github.com/casouzanasc/cypress-web-api-automation.git"
   },
   "author": "Camila Souza Nascimento",
   "license": "MIT",
