@@ -1,9 +1,9 @@
-import axios from "axios";
+import api from "./api";
 import errorHandler from "../helpers/errorHandler";
 
 async function deleteArticle({ slug, headers }) {
   try {
-    const { data } = await axios({
+    const { data } = await api({
       headers,
       method: "DELETE",
       url: `api/articles/${slug}/`,

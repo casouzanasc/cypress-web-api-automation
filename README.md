@@ -1,138 +1,308 @@
-# ![RealWorld Example App](logo.png)
+# Automação CY
 
-> **React / Vite + SWC / Express.js / Sequelize / PostgreSQL codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the [RealWorld](https://realworld.io/) spec and API.**
+<p align="center">
+  <img alt="Cypress" src="https://img.shields.io/badge/Cypress-12.17.2-17202C?style=for-the-badge&logo=cypress" />
+  <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-ES6-F7DF1E?style=for-the-badge&logo=javascript" />
+  <img alt="Node.js" src="https://img.shields.io/badge/Node.js-18%2B-339933?style=for-the-badge&logo=nodedotjs" />
+  <img alt="React" src="https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react" />
+  <img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" />
+</p>
 
-This codebase was created to demonstrate a fully fledged fullstack application built with **React / Vite + SWC / Express.js / Sequelize / PostgreSQL** including CRUD operations, authentication, routing, pagination, and more.
+Projeto desenvolvido por **Camila Souza Nascimento** durante os estudos de Automação de Testes com Cypress, com foco na aplicação prática de testes automatizados Web e API e na construção de um portfólio técnico de Quality Assurance.
 
-**[Demo app](https://conduit-realworld-example-app.fly.dev/)&nbsp;&nbsp;|&nbsp;&nbsp;[With Create React App](https://github.com/TonyMckes/conduit-realworld-example-app/tree/create-react-app)&nbsp;&nbsp;|&nbsp;&nbsp;[Other RealWorld Example Apps](https://codebase.show/projects/realworld?category=fullstack)**
+## 🎯 Objetivo
 
-> For more information on how to this works with other frontends/backends, head over to the [RealWorld](https://github.com/gothinkster/realworld) repo.
+Este projeto tem como objetivo praticar e demonstrar conceitos de automação de testes utilizando Cypress, incluindo:
 
----
+- testes end-to-end
+- automação de fluxos Web
+- testes positivos e negativos
+- testes de API
+- Page Object
+- assertions
+- execução headless
+- geração de relatórios
+- integração entre frontend, backend e banco de dados
 
-## Getting Started
+## 🛠️ Stack utilizada
 
-These instructions will help you install and run the project on your local machine for development and testing.
+- Cypress
+- JavaScript
+- Node.js
+- Express
+- Sequelize
+- PostgreSQL
+- React
+- Vite
+- Mochawesome Reporter
+- Git e GitHub
 
-### Prerequisites
+## 📁 Estrutura do projeto
 
-Before you run the project, make sure that you have the following tools and software installed on your computer:
-
-- Text editor/IDE (e.g., VS Code, Sublime Text, Atom)
-- [Git](https://git-scm.com/downloads)
-- [Node.js](https://nodejs.org/en/download/) `v18.11.0+`
-- [NPM](https://www.npmjs.com/) (usually included with Node.js)
-- SQL database
-
-### Installation
-
-To install the project on your computer, follow these steps:
-
-1. Clone the repository to your local machine.
-
-   ```bash
-   git clone https://github.com/TonyMckes/conduit-realworld-example-app.git
-   ```
-
-2. Navigate to the project directory.
-
-   ```bash
-   cd conduit-realworld-example-app
-   ```
-
-3. Install project dependencies by running the command:
-
-   ```bash
-   npm install
-   ```
-
-### Configuration
-
-1. Create a `.env` file in the root directory of the project
-2. Add the required environment variables as specified in the [`.env.example`](backend/.env.example) file
-3. (Optional) update the Sequelize configuration parameters in the [`config.js`](backend/config/config.js) file
-4. If you are **not** using PostgreSQL, you may also have to install the driver for your database:
-
-   <details>
-   <summary>Use one of the following commands to install:</summary><br/>
-
-   > Note: `-w backend` option is used to install it in the backend [`package.json`](backend/package.json).
-
-   ```bash
-   npm install -w backend pg pg-hstore  # Postgres (already installed)
-   npm install -w backend mysql2
-   npm install -w backend mariadb
-   npm install -w backend sqlite3
-   npm install -w backend tedious       # Microsoft SQL Server
-   npm install -w backend oracledb      # Oracle Database
-   ```
-
-   > :information_source: Visit [Sequelize - Installing](https://sequelize.org/docs/v6/getting-started/#installing) for more infomation.
-
-   ***
-
-   </details>
-
-5. Create database specified by configuration by executing
-
-   > :warning: Please, make sure you have already created a superuser for your database.
-
-   ```bash
-   npm run sqlz -- db:create
-   ```
-
-   ```bash
-   npm run sqlz -- db:migrate
-   ```
-
-   > :information_source: The command `npm run sqlz` is an alias for `npx -w backend sequelize-cli`.  
-   > Execute `npm run sqlz -- --help` to see more of `sequelize-cli` commands availables.
-
-6. Optionally you can run the following command to populate your database with some dummy data:
-
-   ```bash
-   npm run sqlz -- db:seed:all
-   ```
-
-### Usage
-
-#### Development Server
-
-To run the project, follow these steps:
-
-1. Start the development server by executing the command:
-
-   ```bash
-   npm run dev
-   ```
-
-2. Open a web browser and navigate to:
-   - Home page should be available at [`http://localhost:3000/`](http://localhost:3000).
-   - API endpoints should be available at [`http://localhost:3001/api`](http://localhost:3001/api).
-
-#### Running Tests
-
-To run tests, simply run the following command:
-
-```bash
-npm run test
+```text
+automacao_cy/
+├── backend/
+│   ├── config/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   └── index.js
+│
+├── frontend/
+│   ├── src/
+│   ├── vite.config.js
+│   └── package.json
+│
+├── testAutomation/
+│   ├── cypress/
+│   │   ├── e2e/
+│   │   │   ├── api/
+│   │   │   └── pages/
+│   │   │       ├── login/
+│   │   │       ├── home/
+│   │   │       ├── cart/
+│   │   │       └── checkout/
+│   │   ├── fixtures/
+│   │   └── support/
+│   │
+│   ├── cypress_dev.config.js
+│   └── package.json
+│
+├── package.json
+├── README.md
+└── LICENSE
 ```
 
-#### Production
+## 🧩 Page Object
 
-The following command will build the production version of the app:
+Os testes Web utilizam Page Object para separar as responsabilidades entre os cenários de teste, as ações realizadas nas páginas e os elementos utilizados.
 
-```bash
-npm run start
+```text
+Spec
+ ↓
+Page Object
+ ↓
+Elements / Seletores
 ```
 
-## License
+Essa organização facilita a leitura, reutilização e manutenção dos testes automatizados.
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+## 🧪 Cenários automatizados
 
-## Acknowledgments
+### SauceDemo
 
-- [RealWorld](https://realworld.io/)
-- [RealWorld (GitHub)](https://github.com/gothinkster/realworld)
-- [CodebaseShow](https://codebase.show/)
-- [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
+Os testes do SauceDemo incluem:
+
+- login com sucesso
+- login com senha inválida
+- logout
+- adição de produto ao carrinho
+- validação do carrinho
+- preenchimento dos dados do checkout
+- finalização da compra
+- validação da confirmação do pedido
+
+### API
+
+O projeto também possui testes de API utilizando `cy.request()`, incluindo:
+
+- requisições GET
+- requisições POST
+- validação de status HTTP
+- validação do body da resposta
+- validação de propriedades retornadas pela API
+- validação de endpoints locais
+
+## ⚙️ Pré-requisitos
+
+Para executar o projeto localmente:
+
+- Node.js 18+
+- npm
+- Git
+- PostgreSQL
+
+## 📦 Instalação
+
+Clone o repositório e instale as dependências na raiz:
+
+```bash
+npm install
+```
+
+Depois instale as dependências do projeto de automação:
+
+```bash
+cd testAutomation
+npm install
+```
+
+## 🗄️ Configuração do backend local
+
+Crie o arquivo:
+
+```text
+backend/.env
+```
+
+Exemplo:
+
+```env
+PORT=3001
+JWT_KEY=chave-secreta
+
+DEV_DB_USERNAME=postgres
+DEV_DB_PASSWORD=SUA_SENHA
+DEV_DB_NAME=database_development
+DEV_DB_HOSTNAME=127.0.0.1
+DEV_DB_DIALECT=postgres
+```
+
+> O arquivo `.env` contém configurações locais e não deve ser versionado no Git.
+
+Crie também o banco de desenvolvimento no PostgreSQL:
+
+```sql
+CREATE DATABASE database_development;
+```
+
+## ▶️ Executando a aplicação local
+
+### Backend
+
+Na raiz do projeto, execute:
+
+```bash
+npm run dev -w backend
+```
+
+O backend será iniciado em:
+
+```text
+http://localhost:3001
+```
+
+Mantenha esse terminal aberto.
+
+### Frontend
+
+Abra outro terminal e execute:
+
+```bash
+npm run dev -w frontend
+```
+
+O frontend será iniciado em:
+
+```text
+http://localhost:3000
+```
+
+Mantenha esse terminal aberto durante os testes que utilizam a aplicação local.
+
+## 🧪 Executando os testes
+
+Entre na pasta de automação:
+
+```bash
+cd testAutomation
+```
+
+### Cypress em modo interativo
+
+```bash
+npm run open:e2e:local
+```
+
+### Executar todos os testes em modo headless
+
+```bash
+npm run run:e2e:local
+```
+
+### Executar somente os testes de API
+
+```bash
+npm run run:api:local
+```
+
+### Executar somente o teste de login do SauceDemo
+
+```bash
+npm run run:sauce:login
+```
+
+Também é possível executar diretamente um spec específico:
+
+```bash
+npx cypress run --config-file cypress_dev.config.js --spec "cypress/e2e/pages/login/sauceLogin.cy.js"
+```
+
+## 📊 Relatórios
+
+O projeto utiliza o `cypress-mochawesome-reporter`.
+
+Após a execução dos testes, o relatório HTML é gerado em:
+
+```text
+testAutomation/cypress/reports/html/index.html
+```
+
+O Cypress também gera vídeos das execuções headless em:
+
+```text
+testAutomation/cypress/videos/
+```
+
+## ✅ Exemplo de execução
+
+```text
+Spec                                     Tests   Passing   Failing
+cart/sauceCart.cy.js                        1        1         0
+checkout/sauceCheckout.cy.js                1        1         0
+home/sauceHome.cy.js                        1        1         0
+login/sauceLogin.cy.js                      3        3         0
+
+All specs passed!                           6        6         0
+```
+
+## 💡 Conhecimentos aplicados
+
+Durante o desenvolvimento deste projeto foram aplicados conceitos de:
+
+- automação de testes end-to-end
+- Cypress
+- JavaScript
+- Page Object
+- testes positivos e negativos
+- testes de API
+- `cy.request()`
+- validação de status HTTP
+- validação de respostas JSON
+- manipulação de dados de teste
+- custom commands
+- execução headless
+- geração de relatórios
+- integração entre frontend, backend e PostgreSQL
+- análise e manutenção de projetos existentes
+- Git e GitHub
+
+## 🚀 Evolução do projeto
+
+O projeto continuará sendo evoluído com novos cenários e práticas de automação.
+
+Algumas evoluções planejadas:
+
+- ampliar os cenários do SauceDemo
+- aumentar a cobertura de testes de API
+- utilizar fixtures para massa de dados
+- ampliar o uso de custom commands
+- melhorar a reutilização dos Page Objects
+- adicionar execução automática dos testes em CI/CD
+
+## 👩🏽‍💻 Autora
+
+**Camila Souza Nascimento**
+
+Analista de Sistemas / Quality Assurance

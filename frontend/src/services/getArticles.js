@@ -1,4 +1,4 @@
-import axios from "axios";
+import api from "./api";
 import errorHandler from "../helpers/errorHandler";
 
 // prettier-ignore
@@ -12,7 +12,7 @@ async function getArticles({ headers, limit = 3, location, page = 0, tagName, us
       tag: `api/articles?tag=${tagName}&&limit=${limit}&&offset=${page}`,
     };
 
-    const { data } = await axios({ url: url[location], headers });
+    const { data } = await api({ url: url[location], headers });
 
     return data;
   } catch (error) {

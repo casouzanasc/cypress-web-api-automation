@@ -1,9 +1,9 @@
-import axios from "axios";
+import api from "./api";
 import errorHandler from "../helpers/errorHandler";
 
 async function userUpdate({ headers, bio, email, image, password, username }) {
   try {
-    const { data } = await axios({
+    const { data } = await api({
       data: { user: { bio, email, image, password, username } },
       headers,
       method: "PUT",

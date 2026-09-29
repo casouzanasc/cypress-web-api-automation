@@ -1,9 +1,9 @@
-import axios from "axios";
+import api from "./api";
 import errorHandler from "../helpers/errorHandler";
 
 async function userLogin({ email, password }) {
   try {
-    const { data } = await axios({
+    const { data } = await api({
       data: { user: { email, password } },
       method: "POST",
       url: "api/users/login",

@@ -1,9 +1,9 @@
-import axios from "axios";
+import api from "./api";
 import errorHandler from "../helpers/errorHandler";
 
 async function toggleFollow({ following, headers, username }) {
   try {
-    const { data } = await axios({
+    const { data } = await api({
       headers,
       method: following ? "DELETE" : "POST",
       url: `api/profiles/${username}/follow`,

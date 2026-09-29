@@ -1,9 +1,9 @@
-import axios from "axios";
+import api from "./api";
 import errorHandler from "../helpers/errorHandler";
 
 async function getComments({ slug }) {
   try {
-    const { data } = await axios({ url: `api/articles/${slug}/comments` });
+    const { data } = await api({ url: `api/articles/${slug}/comments` });
 
     return data.comments;
   } catch (error) {
